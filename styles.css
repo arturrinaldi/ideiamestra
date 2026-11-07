@@ -1,0 +1,109 @@
+/* ===================================================================
+   IDEIA MESTRA - GAME UI & 3D ATELIER STYLES
+   Sapphire, Electric Cyan & Platinum Aesthetics (Matching Logo)
+   =================================================================== */
+
+:root {
+    --brand-blue: #2563EB;
+    --brand-blue-glow: #3B82F6;
+    --cyber-cyan: #0EA5E9;
+    --ice-cyan: #38BDF8;
+    --slate-silver: #94A3B8;
+    --void-bg: #070A12;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #070A12;
+}
+::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 4px;
+    border: 1px solid rgba(14, 165, 233, 0.25);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2563EB;
+}
+
+/* Logo Presentation Glow & Crispness */
+.logo-display {
+    filter: drop-shadow(0 0 16px rgba(37, 99, 235, 0.35)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.7));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.logo-display:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 24px rgba(14, 165, 233, 0.55)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.9));
+}
+
+/* Game Buttons & Glow FX */
+.btn-game {
+    position: relative;
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(14, 165, 233, 0.65);
+}
+.btn-game:active {
+    transform: translateY(1px);
+}
+
+/* Glassmorphism & HUD elements */
+.hud-box {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.hud-box:hover {
+    border-color: rgba(14, 165, 233, 0.45);
+    box-shadow: 0 4px 25px -5px rgba(37, 99, 235, 0.25);
+}
+
+/* Process Cards Styling */
+.process-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(12px);
+}
+.process-card:hover {
+    border-color: rgba(14, 165, 233, 0.6);
+    box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.35);
+}
+
+/* Configurator Interactive Option Selection */
+.forge-option input:checked + .option-card,
+.forge-scale input:checked + .option-card,
+.forge-finish input:checked + .option-card {
+    border-color: #0EA5E9;
+    background: rgba(37, 99, 235, 0.16);
+    box-shadow: 0 0 22px -3px rgba(14, 165, 233, 0.4);
+}
+
+/* Holographic Grid Pulse */
+@keyframes subtlePulse {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.45; }
+}
+.animate-grid-pulse {
+    animation: subtlePulse 6s ease-in-out infinite;
+}
+
+/* Slider Comparison Dragging */
+#sliderHandle {
+    touch-action: none;
+    user-select: none;
+}
+
+/* FAQ Accordion Transitions */
+.faq-item {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.faq-item.active {
+    border-color: rgba(14, 165, 233, 0.5);
+    background-color: rgba(15, 23, 42, 0.95);
+}
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
